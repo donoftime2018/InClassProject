@@ -1,0 +1,22 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "frontend-build": "cd ../client && npm install && npm run build",
+    "backend-build": "npm install",
+    "build": "npm run frontend-build && npm run backend-build",
+    "dev":   "nodemon server.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.19.3",
+    "path": "^0.12.7"
+  }
+}
