@@ -23,3 +23,26 @@ exports.login = async (req, res) => {
         res.status(400).json({message: "User not found"});
     }
 }
+
+exports.register = async (req, res) => {
+    const { username, password, email, dateOfBirth } = req.body;
+    dateOfBirthParsed = new Date(dateOfBirth);
+
+    const newUser = new User({
+        username: username,
+        password: password,
+        email: email,
+        dateOfBirth: dateOfBirthParsed
+    })
+    await newUser.save();
+
+    console.log(newUser)
+
+    if (newUser){
+        res.status(200).json({message: "User registered successfully"});
+    }
+    else{
+        res.status(400).json({message: "Error registering user"});
+    }
+
+}
