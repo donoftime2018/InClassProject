@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
 
-mongoose.connect("mongodb+srv://donoftime2018_db_user:I6KZT5YJvdrEDNyM@in-class-cluster.btojmo9.mongodb.net/?appName=in-class-cluster&retryWrites=true").then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log('Connected to MongoDB');
 }).catch((error) => {
     console.error('Error connecting to MongoDB:', error);
