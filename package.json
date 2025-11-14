@@ -1,0 +1,21 @@
+{
+  "name": "inclassproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd database && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donoftime2018/InClassProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/donoftime2018/InClassProject/issues"
+  },
+  "homepage": "https://github.com/donoftime2018/InClassProject#readme"
+}
