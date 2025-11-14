@@ -15,6 +15,7 @@ User.pre('save', function (next) {
     console.log(this.password)
     this.password = bcrypt.hashSync(this.password, 10);
     console.log(this.password)
+    next()
 })
 
 module.exports = require('mongoose').model('User', User);
