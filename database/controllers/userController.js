@@ -27,8 +27,8 @@ exports.login = async (req, res) => {
 exports.register = async (req, res) => {
     const { username, password, email, dateOfBirth } = req.body;
     dateOfBirthParsed = new Date(dateOfBirth);
-
-    const newUser = new User({
+    try{
+            const newUser = new User({
         username: username,
         password: password,
         email: email,
@@ -41,8 +41,10 @@ exports.register = async (req, res) => {
     if (newUser){
         res.status(200).json({message: "User registered successfully"});
     }
-    else{
-        res.status(400).json({message: "Error registering user"});
+    } catch (error){
+        console.log(error)
+        res.status(400).json({message: error.message});
     }
+
 
 }
