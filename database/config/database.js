@@ -9,6 +9,7 @@ function connectDB() {
     }).catch((error) => {
         console.error('Error connecting to MongoDB:', error);
     })
+    mongoose.set('setDefaultsOnInsert', true);
 }
 
 module.exports = connectDB;
