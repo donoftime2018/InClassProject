@@ -3,7 +3,7 @@ Item Catalog Web Application (MERN Stack)
 
 📌 Overview
 Put a Price on It! is a MERN-based full-stack web application that allows users to post items for sale, browse catalogs, like/unlike items, search items, and manage user accounts. 
-The system was designed using Software Engineering principles such as Class Models, Use Case Diagrams, Sequence Diagrams, and UI Prototypes.
+This project is based on a pre-existing application that has been in development for several years and the current implementation extends that foundation using formal Software Engineering practices such as Class Models, Use Case Diagrams, Sequence Diagrams and UI Prototypes.
 
 🚀 Features
 👤 User Management
