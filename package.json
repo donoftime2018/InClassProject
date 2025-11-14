@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-server": "cd database && npm install"
+    "install-server": "cd database && npm install",
+    "start": "cd database && npm start"
   },
   "repository": {
     "type": "git",
