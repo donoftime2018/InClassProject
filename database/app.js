@@ -8,7 +8,3 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 }).catch((error) => {
     console.error('Error connecting to MongoDB:', error);
 })
-
-app.get("/", (req, res) => {
-    res.send("Hello World");
-});
