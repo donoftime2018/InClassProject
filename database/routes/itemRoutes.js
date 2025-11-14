@@ -1,10 +1,7 @@
 const express = require('express');
 const app = express();
-const Item = require('../models/Item');
+const itemController = require('../controllers/itemController');
 
-app.get("/items", async (req, res) => {
-    const items =  await Item.find();
-    res.status(200).json(items);
-})
+app.get("/items", itemController.getAllItems)
 
 module.exports = app;
