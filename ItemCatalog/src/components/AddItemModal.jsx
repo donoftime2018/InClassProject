@@ -1,14 +1,30 @@
 import React, { useState } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import axios from 'axios';
 
 export default function AddItemModal({ onAdd, onClose }) {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [link, setLink] = useState('');
   const [desc, setDesc] = useState('');
+  const user = useAuth()
+
+  // console.log(user)
 
   function handleSubmit(e) {
     e.preventDefault();
-    onAdd({ name, price, link, desc });
+      console.log(user.user.username)
+    axios.post(`${import.meta.env.VITE_SERVER_URL}` + "/items/addItem", {name: name, description: desc, price: price, site: link, userName: user.user.username}).then(
+      (res)=>{
+        if (res.status === 200)
+        {
+          onClose()
+        }
+    }).catch((err)=>{
+        alert(err.response.data.message);
+        return false;
+    })
+
   }
 
   return (
