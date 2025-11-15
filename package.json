@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "install-server": "cd database && npm install",
-    "start": "cd database && npm start"
+    "start": "cd database && npm start",
+    "install-client": "cd ItemCatalog && npm install",
+    "build-client": "cd ItemCatalog && npm run build",
+    "start-client": "cd ItemCatalog && npm run start"
   },
   "repository": {
     "type": "git",
