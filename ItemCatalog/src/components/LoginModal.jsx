@@ -14,7 +14,7 @@ export default function LoginModal() {
   return (
     <div className="modal-bg">
       <div className="modal">
-        <h2 style={{ margin: 0, marginBottom: '1.2em', textAlign: 'center' }}>Login</h2>
+        <h2 style={{ margin: 0, marginBottom: '1.2em', textAlign: 'center', color: "#222" }}>Login</h2>
         <form onSubmit={handleLogin}>
           <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
           <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
@@ -22,9 +22,9 @@ export default function LoginModal() {
             <button type="submit">Log In</button>
           </div>
         </form>
-        <div style={{ marginTop: '0.5em', textAlign: 'center', fontSize: '1em' }}>
-          <button style={{ background: '#646cff', color: 'white', marginBottom: '0.3em', marginRight: '0.7em' }}>Sign Up</button>
-          <button style={{ background: 'transparent', color: '#0f62fe', textDecoration: 'underline', border: 'none', padding: 0 }}>Forgot Password?</button>
+        <div style={{ marginTop: '0.5em', display: 'flex', justifyContent: 'center', gap: '1.5em' }}>
+          <button style={{ background: '#646cff', color: 'white', fontWeight: 'bold', fontSize: '1em', padding: '0.4em 1.5em' }}>Sign Up</button>
+          <a href="#" style={{ color: '#3f51b5', alignSelf: 'center', textDecoration: 'underline' }}>Forgot Password?</a>
         </div>
       </div>
     </div>
