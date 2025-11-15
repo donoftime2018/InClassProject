@@ -6,7 +6,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   function login(username, password) {
-    // Dummy logic: Accept any input as logged in
+    
     setUser({ username });
     return true;
   }
