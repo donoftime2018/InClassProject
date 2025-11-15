@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
       (res)=>{
         if (res.status === 200)
         {
-          setUser({ username });
+          setUser({ username});
           return true;
         }
     }).catch((err)=>{

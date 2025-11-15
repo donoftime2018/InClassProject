@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, use } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import AddItemModal from './AddItemModal';
 import ItemCard from './ItemCard';
+import axios from 'axios';
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const [showModal, setShowModal] = useState(false);
   const [items, setItems] = useState([]);
 
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_SERVER_URL}` + "/items/").then((res)=>{
+      console.log(res.data);
+      setItems(res.data);
+    })
+  }, [items])
   function addItem(item) {
+
     setItems([...items, item]);
     setShowModal(false);
   }
