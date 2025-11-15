@@ -17,6 +17,11 @@ exports.login = async (req, res) => {
         {
             res.status(200).json(findUser)
         }
+
+        else
+        {
+            res.status(400).json({message: "Incorrect password"});
+        }
     }
 
     else{
