@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
 
     else
     {
-          axios.post("localhost:4000/login", {username: username, password: password}).then(
+          axios.post("http://localhost:4000/login", {username: username, password: password}).then(
             (res)=>{
               if (res.status === 200)
               {
@@ -22,8 +22,8 @@ export function AuthProvider({ children }) {
                 return true;
               }
           }).catch((err)=>{
-              console.log(err);
-              alert(JSON.parse(err.response.message));
+              console.log(err.response.data.message);
+              alert(err.response.data.message);
               return false;
           })
     }
