@@ -24,7 +24,6 @@ export function AuthProvider({ children }) {
           }).catch((err)=>{
               console.log(err.response.data.message);
               alert(err.response.data.message);
-              return false;
           })
     }
 
