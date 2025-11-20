@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
 
     else
     {
-          axios.post("http://localhost:4000/login", {username: username, password: password}).then(
+          axios.post(`${import.meta.env.VITE_LOCAL_HOST}`+"/login", {username: username, password: password}).then(
             (res)=>{
               if (res.status === 200)
               {
