@@ -7,17 +7,26 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   function login(username, password) {
-    axios.post(`${import.meta.env.VITE_SERVER_URL}` + "/login", {username: username, password: password}).then(
-      (res)=>{
-        if (res.status === 200)
-        {
-          setUser({ username});
-          return true;
-        }
-    }).catch((err)=>{
-        alert(err.response.data.message);
-        return false;
-    })
+
+    if (username === '' || password === '') {
+      alert("Please fill in all fields");
+    }
+
+    else
+    {
+          axios.post("localhost:4000/login", {username: username, password: password}).then(
+            (res)=>{
+              if (res.status === 200)
+              {
+                setUser({ username});
+                return true;
+              }
+          }).catch((err)=>{
+              console.log(err);
+              alert(JSON.parse(err.response.message));
+              return false;
+          })
+    }
 
   }
   function logout() {
