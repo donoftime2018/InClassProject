@@ -10,7 +10,7 @@ export default function Dashboard() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_SERVER_URL}` + "/items/").then((res)=>{
+    axios.get(`${import.meta.env.VITE_LOCAL_HOST}` + "/items/").then((res)=>{
       console.log(res.data);
       setItems(res.data);
     })
@@ -18,6 +18,11 @@ export default function Dashboard() {
   function addItem(item) {
 
     setItems([...items, item]);
+    setShowModal(false);
+  }
+
+  function closeModal()
+  {
     setShowModal(false);
   }
 
@@ -30,7 +35,7 @@ export default function Dashboard() {
       <button onClick={() => setShowModal(true)}>Add an Item</button>
       <h3>Items:</h3>
       {items.map((item, idx) => <ItemCard key={idx} {...item} />)}
-      {showModal && <AddItemModal onAdd={addItem} onClose={() => setShowModal(false)} />}
+      {showModal && <AddItemModal onAdd={addItem} onClose={closeModal} />}
     </div>
   );
 }
