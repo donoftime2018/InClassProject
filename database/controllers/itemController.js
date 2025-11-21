@@ -7,9 +7,9 @@ exports.getAllItems = async(req, res)=>{
 }
 
 exports.addNewItem = async(req, res)=>{
-    const {name, description, price, site, userName} = req.body;
+    const {name, description, price, site, username} = req.body;
     console.log(req.body)
-    let user = await User.findOne({username: userName});
+    let user = await User.findOne({username: username});
     console.log(user);
 
     console.log(req.body);
