@@ -14,7 +14,7 @@ export default function AddItemModal({ onAdd, onClose }) {
   function handleSubmit(e) {
     e.preventDefault();
       console.log(user.username)
-    axios.post(`${import.meta.env.VITE_LOCAL_HOST}` + "/items/addItem", {name: name, description: desc, price: price, site: link, userName: user.username}).then(
+    axios.post(`${import.meta.env.VITE_LOCAL_HOST}` + "/items/addItem", {name: name, description: desc, price: price, site: link, username: user.username}).then(
       (res)=>{
         if (res.status === 200)
         {
