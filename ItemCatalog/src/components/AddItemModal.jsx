@@ -7,14 +7,14 @@ export default function AddItemModal({ onAdd, onClose }) {
   const [price, setPrice] = useState('');
   const [link, setLink] = useState('');
   const [desc, setDesc] = useState('');
-  const user = useAuth()
-
+  const {user} = useAuth()
+  
   // console.log(user)
 
   function handleSubmit(e) {
     e.preventDefault();
-      console.log(user.user.username)
-    axios.post(`${import.meta.env.VITE_SERVER_URL}` + "/items/addItem", {name: name, description: desc, price: price, site: link, userName: user.user.username}).then(
+      console.log(user.username)
+    axios.post(`${import.meta.env.VITE_LOCAL_HOST}` + "/items/addItem", {name: name, description: desc, price: price, site: link, username: user.username}).then(
       (res)=>{
         if (res.status === 200)
         {
@@ -22,7 +22,6 @@ export default function AddItemModal({ onAdd, onClose }) {
         }
     }).catch((err)=>{
         alert(err.response.data.message);
-        return false;
     })
 
   }
